@@ -1,0 +1,27 @@
+# -------------------------
+# Python cache / artifacts
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# vscode debugging
+.vscode/
+
+# Logs
+log/*.log
+
+# Data dumps (keep only small sample data in Git if desired)
+data/*.parquet
+data/data_validation_rules.xlsx
+
+# OS-specific
+.DS_Store
+Thumbs.db

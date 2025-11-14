@@ -1,0 +1,201 @@
+2025-11-14 13:16:54,920 [INFO] 
+=======================================
+=== 🚀 Starting Data Validation 🚀 ===
+=======================================
+
+2025-11-14 13:16:54,927 [INFO] 
+📊 Loading data from cache: data cached 2025-11-14 11-48-59.parquet, Size: 4.10 MB
+2025-11-14 13:16:55,290 [INFO] 
+📊 Data Load Summary (from Cache)
+- File: data cached 2025-11-14 11-48-59.parquet
+- Shape: (494328, 18)
+- Columns: Channel (object), Date (datetime64[ns]), Brand (object), Product_Line (object), Campaign (object), Prisma_Campaign_Secondary (object), Category (object), Raw_Partner (object), Audience (object), Package_Placement_Name (object), Daypart (object), Breakout (object), Retailer (object), Impressions (float64), Clicks (float64), Media_Cost (float64), Video_Views (float64), GRPs (float64)
+2025-11-14 13:16:55,293 [INFO] 
+🚦 Loading rules from Excel: C:\Users\IzzyT.Yang\OneDrive - insidemedia.net\WPP Unite_Internal - 4 - Final File Merging Process\data_validation\qa_script\data\data_validation_rules.xlsx, Sheet: rules
+2025-11-14 13:16:56,153 [INFO] 
+🚦 Rule Load Summary
+- File: C:\Users\IzzyT.Yang\OneDrive - insidemedia.net\WPP Unite_Internal - 4 - Final File Merging Process\data_validation\qa_script\data\data_validation_rules.xlsx
+- Sheet: rules
+- Shape: (15, 6)
+- Columns: column (object), scope (object), allowed (object), contains (object), not_empty (object), note (object)
+2025-11-14 13:16:56,192 [INFO] 
+🏗️ Data preprocessing completed: (placeholder, currently nothing is changed)
+2025-11-14 13:16:56,193 [INFO] 
+🔽 Validating data against 15 rules... 🔽
+2025-11-14 13:16:56,194 [INFO] 
+📝 Parsing rule with column being 'Channel', scope being 'each month of: Date'
+2025-11-14 13:16:56,620 [INFO] 
+📏 Validating Column 'Channel' where `Date` == '2025-08'
+2025-11-14 13:16:56,688 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:56,689 [INFO] 
+📏 Validating Column 'Channel' where `Date` == '2025-09'
+2025-11-14 13:16:56,743 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:56,743 [INFO] 
+📏 Validating Column 'Channel' where `Date` == '2025-10'
+2025-11-14 13:16:56,813 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:56,814 [INFO] 
+📝 Parsing rule with column being 'Date', scope being ''
+2025-11-14 13:16:57,190 [INFO] 
+📏 Validating Column 'Date' on full dataset
+2025-11-14 13:16:57,194 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:57,196 [INFO] 
+📝 Parsing rule with column being 'Brand', scope being 'each month of: Date'
+2025-11-14 13:16:57,607 [INFO] 
+📏 Validating Column 'Brand' where `Date` == '2025-08'
+2025-11-14 13:16:57,656 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:57,657 [INFO] 
+📏 Validating Column 'Brand' where `Date` == '2025-09'
+2025-11-14 13:16:57,704 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:57,704 [INFO] 
+📏 Validating Column 'Brand' where `Date` == '2025-10'
+2025-11-14 13:16:57,747 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:57,748 [INFO] 
+📝 Parsing rule with column being 'Product_Line', scope being ''
+2025-11-14 13:16:58,129 [INFO] 
+📏 Validating Column 'Product_Line' on full dataset
+2025-11-14 13:16:58,158 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:58,159 [INFO] 
+📝 Parsing rule with column being 'Category', scope being 'each month of: Date'
+2025-11-14 13:16:58,559 [INFO] 
+📏 Validating Column 'Category' where `Date` == '2025-08'
+2025-11-14 13:16:58,615 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:58,616 [INFO] 
+📏 Validating Column 'Category' where `Date` == '2025-09'
+2025-11-14 13:16:58,659 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:58,660 [INFO] 
+📏 Validating Column 'Category' where `Date` == '2025-10'
+2025-11-14 13:16:58,720 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:58,721 [INFO] 
+📝 Parsing rule with column being 'Raw_Partner', scope being 'Channel == 'Commerce Display''
+2025-11-14 13:16:59,095 [INFO] 
+📏 Validating Column 'Raw_Partner' where 'Channel == 'Commerce Display''
+2025-11-14 13:16:59,170 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:59,170 [INFO] 
+📝 Parsing rule with column being 'Raw_Partner', scope being 'Channel == 'Commerce Search''
+2025-11-14 13:16:59,534 [INFO] 
+📏 Validating Column 'Raw_Partner' where 'Channel == 'Commerce Search''
+2025-11-14 13:16:59,604 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:16:59,605 [INFO] 
+📝 Parsing rule with column being 'Raw_Partner', scope being 'Channel == 'Digital Search''
+2025-11-14 13:16:59,954 [INFO] 
+📏 Validating Column 'Raw_Partner' where 'Channel == 'Digital Search''
+2025-11-14 13:17:00,009 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:00,010 [INFO] 
+📝 Parsing rule with column being 'Audience', scope being 'Channel == 'Commerce Display' and Raw_Partner == 'AMAZON.COM''
+2025-11-14 13:17:00,377 [INFO] 
+📏 Validating Column 'Audience' where 'Channel == 'Commerce Display' and Raw_Partner == 'AMAZON.COM''
+2025-11-14 13:17:00,466 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:00,467 [INFO] 
+📝 Parsing rule with column being 'Daypart', scope being ''
+2025-11-14 13:17:00,828 [INFO] 
+📏 Validating Column 'Daypart' on full dataset
+2025-11-14 13:17:00,847 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:00,848 [INFO] 
+📝 Parsing rule with column being 'Breakout', scope being '~ (Raw_Partner == 'Bing Ads' and Audience == 'Visual')'
+2025-11-14 13:17:01,204 [INFO] 
+📏 Validating Column 'Breakout' where '~ (Raw_Partner == 'Bing Ads' and Audience == 'Visual')'
+2025-11-14 13:17:01,326 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:01,327 [INFO] 
+📝 Parsing rule with column being 'Breakout', scope being 'Raw_Partner == 'Bing Ads' and Audience == 'Visual''
+2025-11-14 13:17:01,692 [INFO] 
+📏 Validating Column 'Breakout' where 'Raw_Partner == 'Bing Ads' and Audience == 'Visual''
+2025-11-14 13:17:01,750 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:01,751 [INFO] 
+📝 Parsing rule with column being 'Retailer', scope being 'Channel == 'Commerce Display' or Channel == 'Commerce Search''
+2025-11-14 13:17:02,089 [INFO] 
+📏 Validating Column 'Retailer' where 'Channel == 'Commerce Display' or Channel == 'Commerce Search''
+2025-11-14 13:17:02,198 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:02,199 [INFO] 
+📝 Parsing rule with column being 'Retailer', scope being 'Channel == 'Digital Search''
+2025-11-14 13:17:02,544 [INFO] 
+📏 Validating Column 'Retailer' where 'Channel == 'Digital Search''
+2025-11-14 13:17:02,595 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:02,596 [INFO] 
+📝 Parsing rule with column being 'GRPs', scope being ''
+2025-11-14 13:17:02,945 [INFO] 
+📏 Validating Column 'GRPs' on full dataset
+2025-11-14 13:17:02,955 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:02,956 [INFO] 
+=======================================
+=== 🚀 Starting Data Validation 🚀 ===
+=======================================
+Total rules processed: 15
+✅ Passed: 15
+❌ Failed: 0
+
+2025-11-14 13:17:23,794 [INFO] 
+=======================================
+=== 🚀 Starting Data Validation 🚀 ===
+=======================================
+
+2025-11-14 13:17:23,799 [INFO] 
+📊 Loading data from cache: data cached 2025-11-14 11-48-59.parquet, Size: 4.10 MB
+2025-11-14 13:17:24,123 [INFO] 
+📊 Data Load Summary (from Cache)
+- File: data cached 2025-11-14 11-48-59.parquet
+- Shape: (494328, 18)
+- Columns: Channel (object), Date (datetime64[ns]), Brand (object), Product_Line (object), Campaign (object), Prisma_Campaign_Secondary (object), Category (object), Raw_Partner (object), Audience (object), Package_Placement_Name (object), Daypart (object), Breakout (object), Retailer (object), Impressions (float64), Clicks (float64), Media_Cost (float64), Video_Views (float64), GRPs (float64)
+2025-11-14 13:17:24,124 [INFO] 
+🚦 Loading rules from Excel: C:\Users\IzzyT.Yang\OneDrive - insidemedia.net\WPP Unite_Internal - 4 - Final File Merging Process\data_validation\qa_script\data\data_validation_rules.xlsx, Sheet: rules
+2025-11-14 13:17:24,336 [INFO] 
+🚦 Rule Load Summary
+- File: C:\Users\IzzyT.Yang\OneDrive - insidemedia.net\WPP Unite_Internal - 4 - Final File Merging Process\data_validation\qa_script\data\data_validation_rules.xlsx
+- Sheet: rules
+- Shape: (15, 6)
+- Columns: column (object), scope (object), allowed (object), contains (object), not_empty (object), note (object)
+2025-11-14 13:17:24,371 [INFO] 
+🏗️ Data preprocessing completed: (placeholder, currently nothing is changed)
+2025-11-14 13:17:24,371 [INFO] 
+🔽 Validating data against 15 rules... 🔽
+2025-11-14 13:17:24,372 [INFO] 
+📝 Parsing rule with column being 'Channel', scope being 'each month of: Date'
+2025-11-14 13:17:24,736 [INFO] 
+📏 Validating Column 'Channel' where `Date` == '2025-08'
+2025-11-14 13:17:24,792 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:24,792 [INFO] 
+📏 Validating Column 'Channel' where `Date` == '2025-09'
+2025-11-14 13:17:24,845 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:24,846 [INFO] 
+📏 Validating Column 'Channel' where `Date` == '2025-10'
+2025-11-14 13:17:24,896 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:24,897 [INFO] 
+📝 Parsing rule with column being 'Date', scope being ''
+2025-11-14 13:17:25,284 [INFO] 
+📏 Validating Column 'Date' on full dataset
+2025-11-14 13:17:25,289 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:25,290 [INFO] 
+📝 Parsing rule with column being 'Brand', scope being 'each month of: Date'
+2025-11-14 13:17:25,690 [INFO] 
+📏 Validating Column 'Brand' where `Date` == '2025-08'
+2025-11-14 13:17:25,736 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:25,736 [INFO] 
+📏 Validating Column 'Brand' where `Date` == '2025-09'
+2025-11-14 13:17:25,777 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:25,778 [INFO] 
+📏 Validating Column 'Brand' where `Date` == '2025-10'
+2025-11-14 13:17:25,819 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:25,820 [INFO] 
+📝 Parsing rule with column being 'Product_Line', scope being ''
+2025-11-14 13:17:26,197 [INFO] 
+📏 Validating Column 'Product_Line' on full dataset
+2025-11-14 13:17:26,215 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:26,216 [INFO] 
+📝 Parsing rule with column being 'Category', scope being 'each month of: Date'
+2025-11-14 13:17:26,635 [INFO] 
+📏 Validating Column 'Category' where `Date` == '2025-08'
+2025-11-14 13:17:26,680 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:26,681 [INFO] 
+📏 Validating Column 'Category' where `Date` == '2025-09'
+2025-11-14 13:17:26,726 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:26,726 [INFO] 
+📏 Validating Column 'Category' where `Date` == '2025-10'
+2025-11-14 13:17:26,778 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:26,779 [INFO] 
+📝 Parsing rule with column being 'Raw_Partner', scope being 'Channel == 'Commerce Display''
+2025-11-14 13:17:27,153 [INFO] 
+📏 Validating Column 'Raw_Partner' where 'Channel == 'Commerce Display''
+2025-11-14 13:17:27,203 [INFO] ✅ PASS - All validations passed
+2025-11-14 13:17:27,204 [INFO] 
+📝 Parsing rule with column being 'Raw_Partner', scope being 'Channel == 'Commerce Search''
+2025-11-14 13:17:27,557 [INFO] 
+📏 Validating Column 'Raw_Partner' where 'Channel == 'Commerce Search''
