@@ -17,7 +17,7 @@ Core validation logics are from the Cerberus validation library.
 
 ### Source Files Perparation
 
-1. Ensure you have a `data_validation_rules.xlsx` in the data folder (so you can use the default settings), or in another directory and manually input the file directory when running the script/using it in Python.
+1. Ensure you have a `data_validation_rules.xlsx` in the data folder (so you can use the default settings), or in another directory and manually input the file directory when running the script/using it in Python. A sample file is saved in `data\data_validation_rules - template.xlsx` in this project.
 2. Have the raw data ready in Excel format. This can be saved anywhere.
 3. Make sure both files are closed when running the script
 

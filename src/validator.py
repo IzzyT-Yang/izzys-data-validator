@@ -2,18 +2,7 @@
 """
 Data Validator Script
 
-This script validates data against rules defined in an Excel file.
-It supports different scopes (all, each: column, when: condition) and 
-different validation rules (must have, allow, no).
 
-Version: 1.0.0
-Last Updated: 2024-11/14
-
-Updates:
-- 2025-11-14 (v1.0.0): Initial release with Cerberus integration for validation.
-- 2025-11-17 (v1.0.1): Added API function to allow programmatic use.
-
-Author: izzy.yang@wppunite.com
 """
 
 import argparse
@@ -62,6 +51,24 @@ def setup_logger(log_file: str) -> logging.Logger:
 # ---------------------------------------------------------------------
 # Data I/O Functions
 # ---------------------------------------------------------------------
+
+def clean_path_input(user_input: str) -> str:
+    """Clean and normalize path input from user."""
+    if not user_input:
+        return ""
+    
+    # Strip whitespace
+    cleaned = user_input.strip()
+    
+    # Remove surrounding quotes (both single and double)
+    if (cleaned.startswith('"') and cleaned.endswith('"')) or \
+        (cleaned.startswith("'") and cleaned.endswith("'")):
+        cleaned = cleaned[1:-1]
+    
+    # Normalize path separators to OS-appropriate format
+    cleaned = os.path.normpath(cleaned)
+    
+    return cleaned
 
 def get_project_root() -> Path:
     if getattr(sys, 'frozen', False):  
@@ -428,6 +435,10 @@ def run_validation(data_file: str = 'use_cache',
     
     logger = setup_logger(log_file)
 
+    data_file = clean_path_input(data_file)
+    rules_file = clean_path_input(rules_file)
+    log_file = clean_path_input(log_file)
+
     logger.info(textwrap.dedent("""
         =======================================
         === 🚀 Starting Data Validation 🚀 ===
@@ -458,24 +469,6 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Validate data against rules defined in Excel file."
     )
-    
-    def clean_path_input(user_input: str) -> str:
-        """Clean and normalize path input from user."""
-        if not user_input:
-            return ""
-        
-        # Strip whitespace
-        cleaned = user_input.strip()
-        
-        # Remove surrounding quotes (both single and double)
-        if (cleaned.startswith('"') and cleaned.endswith('"')) or \
-           (cleaned.startswith("'") and cleaned.endswith("'")):
-            cleaned = cleaned[1:-1]
-        
-        # Normalize path separators to OS-appropriate format
-        cleaned = os.path.normpath(cleaned)
-        
-        return cleaned
     
     # Prompt for data file if not provided
     data_file = clean_path_input(input("Enter data file path (or press Enter to use cached data): "))
