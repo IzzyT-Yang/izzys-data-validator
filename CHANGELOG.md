@@ -22,3 +22,8 @@ All notable changes to the Data Validation QA Script will be documented in this 
 - Supports "each date of" and "each month of" scoping
 - Automatic cleanup of old cache files
 - Portable EXE deployment with relative path resolution (file not generated yet)
+
+## [1.0.1] - 2025-11-17
+
+### Added
+- API function to allow being called as package.

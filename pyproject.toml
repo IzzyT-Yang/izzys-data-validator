@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "excel-validator"
+version = "0.1.0"
+description = "A data validation tool that validates data against configurable rules in Excel files."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas",
+  "cerberus",
+  "openpyxl"
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/excel-validator"
+
+[project.scripts]
+excel-validator = "data_validation:main"
+
+[tool.setuptools]
+# We use a single module located under src/
+py-modules = ["data_validation"]
+package-dir = { "" = "src" }

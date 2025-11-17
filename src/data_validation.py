@@ -10,7 +10,8 @@ Version: 1.0.0
 Last Updated: 2024-11/14
 
 Updates:
-- v1.0.0: Initial release with Cerberus integration for validation.
+- 2025-11-14 (v1.0.0): Initial release with Cerberus integration for validation.
+- 2025-11-17 (v1.0.1): Added API function to allow programmatic use.
 
 Author: izzy.yang@wppunite.com
 """
@@ -401,7 +402,47 @@ def validate_data(data: pd.DataFrame, rule: pd.DataFrame, logger: logging.Logger
         ✅ Passed: {passed_count}
         ❌ Failed: {failed_count}
         """))
-    
+
+
+# ---------------------------------------------------------------------
+# Package interface
+# ---------------------------------------------------------------------
+
+def run_validation(data_file: str, data_sheet: str, rules_file: str, rules_sheet: str, log_file: str,) -> bool:
+    """
+    Run data validation programmatically.
+
+    Args:
+        data_file: Path to the data file.
+        data_sheet: Sheet name in the data file.
+        rules_file: Path to the rules file.
+        rules_sheet: Sheet name in the rules file.
+        log_file: Path to the log file.
+
+    Returns:
+        bool: True if validation passed, False otherwise.
+    """
+    logger = setup_logger(log_file)
+
+    logger.info(textwrap.dedent("""
+        =======================================
+        === 🚀 Starting Data Validation 🚀 ===
+        =======================================
+    """))
+
+    # Load data
+    data_df = load_data(data_file, data_sheet, logger)
+
+    # Load rules
+    rules_df = load_rules(rules_file, rules_sheet, logger)
+
+    # Preprocess data
+    data_df_processed = preprocess_data(data_df, logger)
+
+    # Run validation
+    all_passed = validate_data(data_df_processed, rules_df, logger)
+
+    return all_passed
 
 # ---------------------------------------------------------------------
 # Main execution

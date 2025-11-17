@@ -22,23 +22,27 @@ qa_script/
 └── README.md                       # This file
 ```
 
-## Installation & Setup
-
-### For Development
-
-1. Clone or download this project
-2. Install dependencies: `pip install pandas openpyxl cerberus`
-3. Make a copy of `data_validation_rules - template.xlsx` in the same directory and rename that as `data_validation_rules.xlsx` (so you can use the default settings), or make a copy in another directory and manually input the file directory when running the script
-
-### For Production (EXE)
-
-.exe file not built yet.
-
 ## Usage
 
-### Interactive Mode
+### Installation & Setup
 
-Simply run the script and follow the prompts:
+1. Clone or download this project
+2. R-click in the parent folder and click "Open in Terminal". In Win 10, you can open command line and navigate to the same directory.
+    
+    ![alt text](images/image-1.png)
+
+3. Install dependencies: `pip install pandas openpyxl cerberus` (or use `conda install` if the current virtual enviroment is built with it)
+
+### Source Files Perparation
+
+1. Make a copy of `data_validation_rules - template.xlsx` in the same directory and rename that as `data_validation_rules.xlsx` (so you can use the default settings), or make a copy in another directory and manually input the file directory when running the script.
+2. Have the raw data ready in Excel format. This can be saved anywhere.
+3. Make sure both files are closed when running the script
+
+### Use Script in Interactive Mode
+
+
+Then run the script and follow the prompts:
 
 ```bash
 src/data_validation.py
