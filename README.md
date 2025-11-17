@@ -48,10 +48,6 @@ The script automatically creates parquet cache files for faster subsequent runs:
 
 Cache files are named: `data cached YYYY-MM-DD HH:MM:SS.parquet`
 
-## Author
-
-**Izzy Yang** - izzy.yang@wppunite.com
-
 ## Version History
 
 See the full changelog here: [CHANGELOG.md](CHANGELOG.md)
