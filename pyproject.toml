@@ -18,9 +18,9 @@ dependencies = [
 Homepage = "https://github.com/IzzyT-Yang/izzys-data-validator.git"
 
 [project.scripts]
-excel-validator = "data_validation:main"
+validator = "validator:main"
 
 [tool.setuptools]
 # We use a single module located under src/
-py-modules = ["data_validation"]
+py-modules = ["validator"]
 package-dir = { "" = "src" }
