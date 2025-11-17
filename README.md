@@ -11,15 +11,27 @@ Core validation logics are from the Cerberus validation library.
 ## Project Structure
 
 ```
-qa_script/
-├── src/
-│   └── data_validation.py    # Main validation script
-├── data/
-│   ├── data_validation_rules - template.xlsx  # Validation rules template (Excel format)
-│   └── data cached *.parquet       # Auto-generated data cache files
-├── log/
-│   └── data_validation_report.log  # Validation reports and logs
-└── README.md                       # This file
+qa_script
+|
+│   CHANGELOG.md
+│   pyproject.toml
+│   README.md
+│
+├───data
+│       .gitkeep
+│       data cached 2025-11-14 11-48-59.parquet
+│       data_validation_rules - template.xlsx
+│       data_validation_rules.xlsx
+│
+├───images
+│       image-1.png
+│
+├───log
+│       .gitkeep
+│       data_validation_report.log
+│
+└───src
+        data_validation.py
 ```
 
 ## Usage
