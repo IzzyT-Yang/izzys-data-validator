@@ -1,3 +1,14 @@
+Metadata-Version: 2.4
+Name: izzys-data-validator
+Version: 0.1.0
+Summary: A data validation tool that validates data against configurable rules in Excel files.
+Project-URL: Homepage, https://github.com/IzzyT-Yang/izzys-data-validator.git
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: cerberus
+Requires-Dist: openpyxl
+
 # Data Validation QA Script
 
 A data validation tool that validates data against configurable rules in Excel files.
@@ -8,6 +19,32 @@ This script validates data from Excel files against a set of predefined rules to
 
 Core validation logics are from the Cerberus validation library.
 
+## Project Structure
+
+```
+qa_script
+|
+│   CHANGELOG.md
+│   pyproject.toml
+│   README.md
+│
+├───data
+│       .gitkeep
+│       data cached 2025-11-14 11-48-59.parquet
+│       data_validation_rules - template.xlsx
+│       data_validation_rules.xlsx
+│
+├───images
+│       image-1.png
+│
+├───log
+│       .gitkeep
+│       data_validation_report.log
+│
+└───src
+        data_validation.py
+```
+
 ## Usage
 
 ### Installation & Setup
@@ -17,11 +54,12 @@ Core validation logics are from the Cerberus validation library.
 
 ### Source Files Perparation
 
-1. Ensure you have a `data_validation_rules.xlsx` in the data folder (so you can use the default settings), or in another directory and manually input the file directory when running the script/using it in Python.
+1. Make a copy of `data_validation_rules - template.xlsx` in the same directory and rename that as `data_validation_rules.xlsx` (so you can use the default settings), or make a copy in another directory and manually input the file directory when running the script.
 2. Have the raw data ready in Excel format. This can be saved anywhere.
 3. Make sure both files are closed when running the script
 
 ### Use Script in Interactive Mode
+
 
 Then run the script and follow the prompts:
 
@@ -45,11 +83,6 @@ Enter rules file path (or press Enter for default): [Enter]
 Enter rules sheet name (or press Enter for default 'rules'): [Enter]
 Enter log file path (or press Enter for default): [Enter]
 ```
-
-## Use as Python Module
-
-
-
 
 ## Validation Rules Format
 

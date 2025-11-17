@@ -1,0 +1,8 @@
+README.md
+pyproject.toml
+src/izzys_data_validator.egg-info/PKG-INFO
+src/izzys_data_validator.egg-info/SOURCES.txt
+src/izzys_data_validator.egg-info/dependency_links.txt
+src/izzys_data_validator.egg-info/entry_points.txt
+src/izzys_data_validator.egg-info/requires.txt
+src/izzys_data_validator.egg-info/top_level.txt

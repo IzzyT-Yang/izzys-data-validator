@@ -408,20 +408,24 @@ def validate_data(data: pd.DataFrame, rule: pd.DataFrame, logger: logging.Logger
 # Package interface
 # ---------------------------------------------------------------------
 
-def run_validation(data_file: str, data_sheet: str, rules_file: str, rules_sheet: str, log_file: str,) -> bool:
+def run_validation(data_file: str = 'use_cache',
+                   data_sheet: str = '',
+                   rules_file: str = 'data/data_validation_rules.xlsx',
+                   rules_sheet: str = 'rules',
+                   log_file: str = 'log/data_validation_report.log') -> None:
     """
     Run data validation programmatically.
 
     Args:
-        data_file: Path to the data file.
-        data_sheet: Sheet name in the data file.
-        rules_file: Path to the rules file.
-        rules_sheet: Sheet name in the rules file.
-        log_file: Path to the log file.
-
-    Returns:
-        bool: True if validation passed, False otherwise.
+        data_file: Path to the data file. Provide the actual directory, or ingore to use the latest cached data.
+        data_sheet: Sheet name in the data file. Provide the actual sheet name in excel, or ignore if using cached file.
+        rules_file: Path to the rules file. Ignore to use default 'data/data_validation_rules.xlsx' in the project root.
+        rules_sheet: Sheet name in the rules file. Ingore to use default 'rules' sheet.
+        log_file: Path to the log file. If left blank. Ingore to use default 'log/data_validation_report.log' in the project root.
     """
+    os.makedirs(os.path.dirname(rules_file), exist_ok=True)
+    os.makedirs(os.path.dirname(log_file), exist_ok=True)
+    
     logger = setup_logger(log_file)
 
     logger.info(textwrap.dedent("""
@@ -442,7 +446,8 @@ def run_validation(data_file: str, data_sheet: str, rules_file: str, rules_sheet
     # Run validation
     all_passed = validate_data(data_df_processed, rules_df, logger)
 
-    return all_passed
+    input("\nPress Enter to exit...")
+    sys.exit(0)
 
 # ---------------------------------------------------------------------
 # Main execution
@@ -485,6 +490,7 @@ def parse_args() -> argparse.Namespace:
     rules_file = clean_path_input(input(f"Enter rules file path (or press Enter for default '{default_rules_path}'): "))
     if not rules_file:
         rules_file = default_rules_path
+        os.makedirs(os.path.dirname(rules_file), exist_ok=True)
     
     rules_sheet = input("Enter rules sheet name (or press Enter for default 'rules'): ").strip()
     if not rules_sheet:
@@ -495,6 +501,7 @@ def parse_args() -> argparse.Namespace:
     log_file = clean_path_input(input(f"Enter log file path (or press Enter for default '{default_log_path}'): "))
     if not log_file:
         log_file = default_log_path
+        os.makedirs(os.path.dirname(log_file), exist_ok=True)
     
     # Create namespace object with the collected inputs
     args = argparse.Namespace()

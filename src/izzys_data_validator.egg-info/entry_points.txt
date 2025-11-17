@@ -1,0 +1,2 @@
+[console_scripts]
+excel-validator = data_validation:main
