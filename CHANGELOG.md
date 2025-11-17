@@ -26,4 +26,5 @@ All notable changes to the Data Validation QA Script will be documented in this 
 ## [1.0.1] - 2025-11-17
 
 ### Added
-- API function to allow being called as package.
+- API function and pyproject.toml to allow being installed and called as package
+- Updated 

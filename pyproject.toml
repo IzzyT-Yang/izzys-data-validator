@@ -18,7 +18,7 @@ dependencies = [
 Homepage = "https://github.com/IzzyT-Yang/izzys-data-validator.git"
 
 [project.scripts]
-validator = "validator:main"
+run_validation = "validator:main"
 
 [tool.setuptools]
 # We use a single module located under src/
